@@ -13,4 +13,7 @@ class Cuenta:
         self.saldo += valor
         
     def retirar(self, valor):
-        self.saldo -= valor
+        if(valor<= self.saldo):
+            self.saldo -= valor
+        else:
+            print("No cuenta con esa cantidad disponible para retirar")
