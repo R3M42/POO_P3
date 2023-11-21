@@ -19,6 +19,6 @@ class Cuenta:
         #else:
          #   print("No cuenta con esa cantidad disponible para retirar")
             
-    def transferir(self, valor, origen, destino):
-        origen.retirar(valor)
+    def transferir(self, valor, destino):
+        self.retirar(valor)
         destino.depositar(valor)
