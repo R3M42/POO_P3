@@ -7,18 +7,14 @@ class Cuenta:
         self.__limite = limite
         
     def extracto(self):
-        print("Saldo: {} del titular {}".format(self.__saldo, self.__titular))
+        print('Saldo {} del titular {}'.format(self.__saldo, self.__titular))
         
     def depositar(self, valor):
         self.__saldo += valor
         
     def retirar(self, valor):
         self.__saldo -= valor
-        #if(valor<= self.saldo):
-         #   self.saldo -= valor
-        #else:
-         #   print("No cuenta con esa cantidad disponible para retirar")
-            
+        
     def transferir(self, valor, destino):
         self.retirar(valor)
         destino.depositar(valor)
@@ -29,8 +25,10 @@ class Cuenta:
     def get_titular(self):
         return self.__titular
 
-    def get_limite(self):
+    @property
+    def limite(self):
         return self.__limite
-
-    def set_limite(self, limite):
+    
+    @limite.setter
+    def limite(self, limite):
         self.__limite = limite
